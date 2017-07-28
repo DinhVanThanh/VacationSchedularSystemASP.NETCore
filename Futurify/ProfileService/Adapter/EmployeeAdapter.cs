@@ -17,9 +17,9 @@ namespace ProfileService.Adapter
             ViewModel.FirstName = employee.FirstName;
             ViewModel.LastName = employee.LastName;
             ViewModel.PhoneNumber = employee.PhoneNumber;
-            ViewModel.RemainDayOff = (int)employee.RemainingDay;
+            ViewModel.RemainDayOff = employee.RemainingDay.HasValue ? employee.RemainingDay.Value : 12;
             ViewModel.Email = employee.Email;
-            ViewModel.PositionId = (int)employee.PositionId;
+            ViewModel.PositionId = employee.PositionId.HasValue ? employee.PositionId.Value : 0;
             ViewModel.Avatar = employee.Avatar;
             ViewModel.BirthDate = (DateTime)employee.BirthDate;
             return ViewModel;

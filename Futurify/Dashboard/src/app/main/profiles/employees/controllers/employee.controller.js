@@ -3,19 +3,35 @@
 
     angular
         .module('app.profile.employee')
-        .controller('EmployeeController', EmployeeController);
+        .controller('EmployeeController', EmployeeController)
+        .controller('ToastCtrl', ToastCtrl);
+
+    function ToastCtrl($scope, $mdToast, $mdDialog, $state) {
+        $scope.closeToast = function () {
+            if (isDlgOpen) return;
+
+            $mdToast
+                .hide()
+                .then(function () {
+                    isDlgOpen = false;
+                });
+        };
+    }
 
     /** @ngInject */
-    function EmployeeController($scope, $log, $mdDialog, $rootScope, $http, $window) {
-        $scope.baseUrl = "http://localhost:65235";
-        $rootScope.ajax.get("http://localhost:65235/api/Position/PositionList", function (positions) {
+    function EmployeeController($scope, $log, $mdDialog, $rootScope, $http, $window, ProfileService, $mdToast) {
+        ProfileService.getAllPositions().then(function (result) {
+            var positions = result.data;
             $scope.positions = positions;
             getEmployeeData();
             bindDataGrid();
-        });
+        }, function (err) {
+            console.log(err);
+            $scope.showFailedLoadEmployeeToast();
+        }); 
         var readonlyEditor = function (container, options) {
             if (options.field == 'Gender') {
-                var input = $('<input data-text-field="value" data-value-field="id" data-bind="value:GenderId"/>');
+                var input = $('<input data-text-field="value" data-value-field="value" data-bind="value:GenderId"/>');
                 input.appendTo(container)
                     .kendoDropDownList({
                         dataSource: $scope.genders
@@ -78,41 +94,48 @@
                     read: function (e) {
 
                         var data = [];
-
-                        $rootScope.ajax.get("http://localhost:65235/api/Employee/EmployeeList", function (employees) {
-                            var position;
+                        ProfileService.getAllEmployees().then(function (result) {
+                            var employees = result.data;
+                            var position = null;
                             console.log(employees);
                             employees.forEach(function (value) {
-                                  $scope.positions.forEach(function (pos) {
-                                      if (pos.id == value.positionId)
-                                          position = pos.name;
-                                  });
-                                  var gender;
-                                  var genderid;
-                                  $scope.genders.forEach(function (gen) {
-                                      if (gen.id == value.gender)
-                                      { 
-                                          gender = gen.value;
-                                          genderid = gen.id;
-                                      }
-                                  });
-                                  data.push({
-                                      Id: value.id,
-                                      FirstName: value.firstName,
-                                      LastName: value.lastName,
-                                      GenderId: genderid,
-                                      Gender: gender,
-                                      BirthDate: value.birthDate,
-                                      PositionId: value.positionId,
-                                      Position: position,
-                                      PhoneNumber: value.phoneNumber,
-                                      Email: value.email,
-                                      RemainDayOff: value.remainDayOff,
-                                      Avatar: value.avatar
-                                  });
+                                if ($scope.positions)
+                                {
+                                    $scope.positions.forEach(function (pos) {
+                                        if (pos.id == value.positionId)
+                                            position = pos.name;
+                                    });
+                                }
+                                
+                                var gender;
+                                var genderid;
+                                $scope.genders.forEach(function (gen) {
+                                    if (gen.id == value.gender) {
+                                        gender = gen.value;
+                                        genderid = gen.id;
+                                    }
+                                });
+                                data.push({
+                                    Id: value.id,
+                                    FirstName: value.firstName,
+                                    LastName: value.lastName,
+                                    GenderId: genderid,
+                                    Gender: gender,
+                                    BirthDate: value.birthDate,
+                                    PositionId: value.positionId,
+                                    Position: position,
+                                    PhoneNumber: value.phoneNumber,
+                                    Email: value.email,
+                                    RemainDayOff: value.remainDayOff,
+                                    Avatar: value.avatar
+                                });
                             });
                             e.success({ data: data, total: data.length });
+                        }, function (err) {
+                            console.log(err);
+                            $scope.showFailedLoadEmployeeToast();
                         });
+                        
 
                     },
                     create: function (e) {
@@ -303,49 +326,7 @@
                         field: "RemainDayOff", title: "Remain Day Off"
                     }]
             }; 
-        } 
-        
-         
-        $scope.data = [
-        {
-            Id : 1,
-            FirstName: "dinh",
-            LastName: "thanh",
-            Gender: "Male",
-            BirthDay: "2015-12-22",
-            PositionId : 1,
-            Position: "dev",
-            PhoneNumber: "564647654",
-            Email: "dinhvanthanh1995@gmail.com",
-            RemainDayOff: 3,
-            Avatar: "alice.jpg"
-        },
-        {
-            Id: 2,
-            FirstName: "tan",
-            LastName: "hoang",
-            Gender: "Male",
-            BirthDay: "2015-12-22",
-            PositionId : 2,
-            Position: "dev",
-            PhoneNumber: "564647654",
-            Email: "dinhvanthanh1995@gmail.com",
-            RemainDayOff: 3,
-            Avatar: "alice.jpg"
-        },
-        {
-            Id: 3,
-            FirstName: "thu",
-            LastName: "thao",
-            Gender: "Male",
-            BirthDay: "2015-12-22",
-            PositionId : 3,
-            Position: "dev",
-            PhoneNumber: "564647654",
-            Email: "dinhvanthanh1995@gmail.com",
-            RemainDayOff: 3,
-            Avatar: "alice.jpg"
-        }];
+        }  
 
         $scope.delete = function (e, event) {
             
@@ -402,11 +383,18 @@
 
         $scope.user = {};
 
-        $scope.genders = [{ id: 1, value: "Male" }, { id: 0, value: "Female" }];
+        $scope.genders = [{ value: "None" }, { value: "Male" }, { value: "Female" }, { value: "Others" }];
 
-        
+        //toast register information failed
+        $scope.showFailedLoadEmployeeToast = function () {
+            $mdToast.show({
+                hideDelay: 5000,
+                position: 'top right',
+                controller: 'ToastCtrl',
+                templateUrl: 'app/main/toast-templates/load-data-error.html'
 
-     
+            });
+        }; 
     }
 
 })();

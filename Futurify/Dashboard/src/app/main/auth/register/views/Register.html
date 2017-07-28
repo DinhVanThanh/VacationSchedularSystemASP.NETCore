@@ -65,24 +65,7 @@
               <span translate="REGISTER_V2.ERRORS.PHONE_NUMBER_MUST_VALID">Phone number must be a valid </span>
             </div>
           </div>
-        </md-input-container>
-        <md-input-container class="dropdown">
-          <label>Positions</label>
-          <md-select class="dropdown" name="Position" ng-model="selectedPositions"
-                     md-on-close="clearSearchTerm()"
-                     data-md-container-class="selectdemoSelectHeader">
-            <md-select-header class="demo-select-header">
-              <input ng-model="searchTerm"
-                     type="search"
-                     placeholder="Search for a position.."
-                     class="demo-header-searchbox md-text">
-            </md-select-header>
-            <md-optgroup label="Positions"> 
-              <md-option ng-value="position.id" ng-repeat="position in positions |
-              filter:searchTerm">{{position.value}}</md-option>
-            </md-optgroup>
-          </md-select>
-        </md-input-container>
+        </md-input-container> 
         <md-input-container class="dropdown">
           <label>Gender</label>
           <md-select class="dropdown" name="Gender" ng-model="selectedGender"
