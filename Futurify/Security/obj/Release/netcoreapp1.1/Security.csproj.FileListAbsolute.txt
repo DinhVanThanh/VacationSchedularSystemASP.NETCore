@@ -1,0 +1,8 @@
+D:\GitHub\Vacation\Futurify\Security\bin\Release\netcoreapp1.1\Security.deps.json
+D:\GitHub\Vacation\Futurify\Security\bin\Release\netcoreapp1.1\Security.runtimeconfig.json
+D:\GitHub\Vacation\Futurify\Security\bin\Release\netcoreapp1.1\Security.runtimeconfig.dev.json
+D:\GitHub\Vacation\Futurify\Security\bin\Release\netcoreapp1.1\Security.dll
+D:\GitHub\Vacation\Futurify\Security\bin\Release\netcoreapp1.1\Security.pdb
+D:\GitHub\Vacation\Futurify\Security\obj\Release\netcoreapp1.1\Security.AssemblyInfo.cs
+D:\GitHub\Vacation\Futurify\Security\obj\Release\netcoreapp1.1\Security.dll
+D:\GitHub\Vacation\Futurify\Security\obj\Release\netcoreapp1.1\Security.pdb

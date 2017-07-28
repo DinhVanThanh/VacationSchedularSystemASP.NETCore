@@ -1,0 +1,12 @@
+D:\GitHub\Vacation\Futurify\Notification\bin\Release\netcoreapp1.1\Notification.deps.json
+D:\GitHub\Vacation\Futurify\Notification\bin\Release\netcoreapp1.1\Notification.runtimeconfig.json
+D:\GitHub\Vacation\Futurify\Notification\bin\Release\netcoreapp1.1\Notification.runtimeconfig.dev.json
+D:\GitHub\Vacation\Futurify\Notification\bin\Release\netcoreapp1.1\Notification.dll
+D:\GitHub\Vacation\Futurify\Notification\bin\Release\netcoreapp1.1\Notification.pdb
+D:\GitHub\Vacation\Futurify\Notification\bin\Release\netcoreapp1.1\App.common.core.dll
+D:\GitHub\Vacation\Futurify\Notification\bin\Release\netcoreapp1.1\Vacation.common.dll
+D:\GitHub\Vacation\Futurify\Notification\bin\Release\netcoreapp1.1\App.common.core.pdb
+D:\GitHub\Vacation\Futurify\Notification\bin\Release\netcoreapp1.1\Vacation.common.pdb
+D:\GitHub\Vacation\Futurify\Notification\obj\Release\netcoreapp1.1\Notification.AssemblyInfo.cs
+D:\GitHub\Vacation\Futurify\Notification\obj\Release\netcoreapp1.1\Notification.dll
+D:\GitHub\Vacation\Futurify\Notification\obj\Release\netcoreapp1.1\Notification.pdb

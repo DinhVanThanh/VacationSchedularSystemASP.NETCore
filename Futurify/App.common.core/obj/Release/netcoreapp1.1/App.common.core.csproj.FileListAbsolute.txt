@@ -1,0 +1,7 @@
+D:\GitHub\Vacation\Futurify\App.common.core\bin\Release\netcoreapp1.1\App.common.core.deps.json
+D:\GitHub\Vacation\Futurify\App.common.core\bin\Release\netcoreapp1.1\App.common.core.dll
+D:\GitHub\Vacation\Futurify\App.common.core\bin\Release\netcoreapp1.1\App.common.core.pdb
+D:\GitHub\Vacation\Futurify\App.common.core\obj\Release\netcoreapp1.1\App.common.core.csprojResolveAssemblyReference.cache
+D:\GitHub\Vacation\Futurify\App.common.core\obj\Release\netcoreapp1.1\App.common.core.AssemblyInfo.cs
+D:\GitHub\Vacation\Futurify\App.common.core\obj\Release\netcoreapp1.1\App.common.core.dll
+D:\GitHub\Vacation\Futurify\App.common.core\obj\Release\netcoreapp1.1\App.common.core.pdb

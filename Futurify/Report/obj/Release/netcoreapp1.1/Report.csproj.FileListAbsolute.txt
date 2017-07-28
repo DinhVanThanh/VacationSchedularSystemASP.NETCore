@@ -1,0 +1,8 @@
+D:\GitHub\Vacation\Futurify\Report\bin\Release\netcoreapp1.1\Report.deps.json
+D:\GitHub\Vacation\Futurify\Report\bin\Release\netcoreapp1.1\Report.runtimeconfig.json
+D:\GitHub\Vacation\Futurify\Report\bin\Release\netcoreapp1.1\Report.runtimeconfig.dev.json
+D:\GitHub\Vacation\Futurify\Report\bin\Release\netcoreapp1.1\Report.dll
+D:\GitHub\Vacation\Futurify\Report\bin\Release\netcoreapp1.1\Report.pdb
+D:\GitHub\Vacation\Futurify\Report\obj\Release\netcoreapp1.1\Report.AssemblyInfo.cs
+D:\GitHub\Vacation\Futurify\Report\obj\Release\netcoreapp1.1\Report.dll
+D:\GitHub\Vacation\Futurify\Report\obj\Release\netcoreapp1.1\Report.pdb

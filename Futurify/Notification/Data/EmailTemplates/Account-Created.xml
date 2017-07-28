@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContainerMailTemplate>
+	<MailTemplates>
+		<MailTemplate>
+			<Code>Account Register Futurify Vacation</Code>
+			<Subject>
+				[Futurify Vacation] Account details for [LastName] [FirstName].
+			</Subject>
+			<Body>
+				<![CDATA[
+				<p>Hi [FirstName],</p><br/>
+				<p>
+				Thank you for account registering at Futurify Vacation.
+				</p><br/>
+				<p>
+				You will be able to log in at [LoginUrl] in the future using:
+				</p><br/>
+				<p>
+				<strong>e-mail</strong>: [Email]
+				</p><br/>
+				<p>
+				<strong>password</strong>: [Password]
+				</p><br/>
+				------ <a href="http://futurify.io">Futurify Company</a> -------
+
+			  ]]>
+			</Body>
+		</MailTemplate>
+	</MailTemplates>
+</ContainerMailTemplate>
