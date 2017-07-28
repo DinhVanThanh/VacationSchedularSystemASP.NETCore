@@ -16,10 +16,3 @@ D:\GitHub\Vacation\Futurify\Dashboard\obj\Debug\netcoreapp1.1\Dashboard.csprojRe
 D:\GitHub\Vacation\Futurify\Dashboard\obj\Debug\netcoreapp1.1\Dashboard.AssemblyInfo.cs
 D:\GitHub\Vacation\Futurify\Dashboard\obj\Debug\netcoreapp1.1\Dashboard.dll
 D:\GitHub\Vacation\Futurify\Dashboard\obj\Debug\netcoreapp1.1\Dashboard.pdb
-G:\GitHubProject\VacationScheduler\Futurify\Dashboard\bin\Debug\netcoreapp1.1\Dashboard.deps.json
-G:\GitHubProject\VacationScheduler\Futurify\Dashboard\bin\Debug\netcoreapp1.1\Dashboard.runtimeconfig.json
-G:\GitHubProject\VacationScheduler\Futurify\Dashboard\bin\Debug\netcoreapp1.1\Dashboard.runtimeconfig.dev.json
-G:\GitHubProject\VacationScheduler\Futurify\Dashboard\obj\Debug\netcoreapp1.1\Dashboard.csprojResolveAssemblyReference.cache
-G:\GitHubProject\VacationScheduler\Futurify\Dashboard\obj\Debug\netcoreapp1.1\Dashboard.AssemblyInfo.cs
-G:\GitHubProject\VacationScheduler\Futurify\Dashboard\obj\Debug\netcoreapp1.1\Dashboard.dll
-G:\GitHubProject\VacationScheduler\Futurify\Dashboard\obj\Debug\netcoreapp1.1\Dashboard.pdb

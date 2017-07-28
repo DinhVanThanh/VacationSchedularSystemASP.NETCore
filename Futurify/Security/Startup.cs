@@ -72,7 +72,7 @@ namespace Security
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            //AuthContext.UpdateDatabase(app);
+            AuthContext.UpdateDatabase(app);
 
             app.ConfigurePermissions();
 

@@ -30,8 +30,12 @@ namespace ProfileService.EventHandlers
                 Employee existEmployee = await db.Employees.Where(x => x.Email == e.Email).FirstOrDefaultAsync();
                 if (existEmployee == null)
                 {
-                    Employee newEmployee = new Employee(); 
-                    newEmployee.Position = db.Positions.FirstOrDefault(p => p.PositionId == e.Position);
+                    Employee newEmployee = new Employee();
+                    if (db.Positions.Count() <= 0)
+                        newEmployee.Position = null;
+                    else
+                        newEmployee.Position = db.Positions.FirstOrDefault(p => p.PositionId == e.Position);
+
                     newEmployee.Email = e.Email;
                     newEmployee.BirthDate = e.Birthday;
                     newEmployee.PhoneNumber = e.PhoneNumber;
