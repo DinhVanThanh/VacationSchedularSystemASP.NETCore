@@ -612,14 +612,14 @@
     "microsoft.aspnetcore.authentication/1.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1r1C6isVMKJcs/DQhH+/xmMp1jQwRZ9SZdA5AfXzSYhaCQqSN13aDR2is0uik3ojvXi+SBvu0h+ZmbveapZJig==",
+      "sha512": "sha512-nG9AcO8Do23L/KcQayxx0r11wEPjB303TCV/0pqE8j3q1eMcamThFDQ3RtD/qXwk0rmMbyP3zGgZ+5I8TSLvCQ==",
       "path": "microsoft.aspnetcore.authentication/1.1.2",
       "hashPath": "microsoft.aspnetcore.authentication.1.1.2.nupkg.sha512"
     },
     "microsoft.aspnetcore.authentication.cookies/1.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-KCEI8qGmcczOHKxJtQnNdGmwqId+aOk8tg7gYr+PKZwSLDJR52MIfhiiDsG034qx6tYB1qW/3J/mZfUZ2Xp65Q==",
+      "sha512": "sha512-oqcuY3+r/vuanOnM1LulYMq3HJk7AGIxYYcmC6qRfLt2aEUQLzpwsgA3wYj456XbzNSXf51hu0m+fjj/V2LsVQ==",
       "path": "microsoft.aspnetcore.authentication.cookies/1.1.2",
       "hashPath": "microsoft.aspnetcore.authentication.cookies.1.1.2.nupkg.sha512"
     },
@@ -640,7 +640,7 @@
     "microsoft.aspnetcore.cryptography.keyderivation/1.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-4YrJErNcmsgjMSD5vpVyAzp6/EOJepa/cmvxnjFuQkSg+ocpNTWnwl/Hz2Xdp+xNjB7X8I6hFpfitGylS+S4VA==",
+      "sha512": "sha512-LG4cN68fvL151M/+sVfOl3DkLe8a/GPSHnQtde/8hth7Najpb64ZQE3q0WRvhflc8GzStdNWmxb8Sx3j3PWliQ==",
       "path": "microsoft.aspnetcore.cryptography.keyderivation/1.1.2",
       "hashPath": "microsoft.aspnetcore.cryptography.keyderivation.1.1.2.nupkg.sha512"
     },
@@ -703,7 +703,7 @@
     "microsoft.aspnetcore.identity/1.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-SxU9lIIBC/DjjR3sFiFeM7lg+acJFggyhqc3hJNtWKiMHT/RZmv1yjfsITMfA69Z01qU5IMCFEFOM/bp9BZuNQ==",
+      "sha512": "sha512-OwKAA/0j+T5zOC1NkQLq1aqIh+K7AfYRktwqZ1UxVYoAd5wqvR2YQ8PXskAL7gG7+02UoOVlMAQrbBTg0efg6A==",
       "path": "microsoft.aspnetcore.identity/1.1.2",
       "hashPath": "microsoft.aspnetcore.identity.1.1.2.nupkg.sha512"
     },

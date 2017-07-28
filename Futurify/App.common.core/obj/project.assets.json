@@ -9311,10 +9311,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Futurify\\Github\\Vacation\\Futurify\\App.common.core\\App.common.core.csproj",
+      "projectUniqueName": "G:\\GitHubProject\\VacationScheduler\\Futurify\\App.common.core\\App.common.core.csproj",
       "projectName": "App.common.core",
-      "projectPath": "G:\\Futurify\\Github\\Vacation\\Futurify\\App.common.core\\App.common.core.csproj",
-      "outputPath": "G:\\Futurify\\Github\\Vacation\\Futurify\\App.common.core\\obj\\",
+      "projectPath": "G:\\GitHubProject\\VacationScheduler\\Futurify\\App.common.core\\App.common.core.csproj",
+      "outputPath": "G:\\GitHubProject\\VacationScheduler\\Futurify\\App.common.core\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -9322,8 +9322,8 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "G:\\Futurify\\Github\\Vacation\\Futurify\\PhoneNumbers\\PhoneNumbers.csproj": {
-              "projectPath": "G:\\Futurify\\Github\\Vacation\\Futurify\\PhoneNumbers\\PhoneNumbers.csproj"
+            "G:\\GitHubProject\\VacationScheduler\\Futurify\\PhoneNumbers\\PhoneNumbers.csproj": {
+              "projectPath": "G:\\GitHubProject\\VacationScheduler\\Futurify\\PhoneNumbers\\PhoneNumbers.csproj"
             }
           }
         }

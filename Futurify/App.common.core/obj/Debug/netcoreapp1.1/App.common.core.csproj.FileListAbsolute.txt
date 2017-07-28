@@ -16,3 +16,12 @@ D:\GitHub\Vacation\Futurify\App.common.core\obj\Debug\netcoreapp1.1\App.common.c
 D:\GitHub\Vacation\Futurify\App.common.core\obj\Debug\netcoreapp1.1\App.common.core.AssemblyInfo.cs
 D:\GitHub\Vacation\Futurify\App.common.core\obj\Debug\netcoreapp1.1\App.common.core.dll
 D:\GitHub\Vacation\Futurify\App.common.core\obj\Debug\netcoreapp1.1\App.common.core.pdb
+G:\GitHubProject\VacationScheduler\Futurify\App.common.core\bin\Debug\netcoreapp1.1\App.common.core.deps.json
+G:\GitHubProject\VacationScheduler\Futurify\App.common.core\bin\Debug\netcoreapp1.1\App.common.core.dll
+G:\GitHubProject\VacationScheduler\Futurify\App.common.core\bin\Debug\netcoreapp1.1\App.common.core.pdb
+G:\GitHubProject\VacationScheduler\Futurify\App.common.core\bin\Debug\netcoreapp1.1\PhoneNumbers.dll
+G:\GitHubProject\VacationScheduler\Futurify\App.common.core\bin\Debug\netcoreapp1.1\PhoneNumbers.pdb
+G:\GitHubProject\VacationScheduler\Futurify\App.common.core\obj\Debug\netcoreapp1.1\App.common.core.csprojResolveAssemblyReference.cache
+G:\GitHubProject\VacationScheduler\Futurify\App.common.core\obj\Debug\netcoreapp1.1\App.common.core.AssemblyInfo.cs
+G:\GitHubProject\VacationScheduler\Futurify\App.common.core\obj\Debug\netcoreapp1.1\App.common.core.dll
+G:\GitHubProject\VacationScheduler\Futurify\App.common.core\obj\Debug\netcoreapp1.1\App.common.core.pdb

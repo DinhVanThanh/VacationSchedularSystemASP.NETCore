@@ -19,3 +19,10 @@ D:\GitHub\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.c
 D:\GitHub\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.AssemblyInfo.cs
 D:\GitHub\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.dll
 D:\GitHub\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.pdb
+G:\GitHubProject\VacationScheduler\Futurify\PhoneNumbers\bin\Debug\netstandard1.6\PhoneNumbers.deps.json
+G:\GitHubProject\VacationScheduler\Futurify\PhoneNumbers\bin\Debug\netstandard1.6\PhoneNumbers.dll
+G:\GitHubProject\VacationScheduler\Futurify\PhoneNumbers\bin\Debug\netstandard1.6\PhoneNumbers.pdb
+G:\GitHubProject\VacationScheduler\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.csprojResolveAssemblyReference.cache
+G:\GitHubProject\VacationScheduler\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.AssemblyInfo.cs
+G:\GitHubProject\VacationScheduler\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.dll
+G:\GitHubProject\VacationScheduler\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.pdb

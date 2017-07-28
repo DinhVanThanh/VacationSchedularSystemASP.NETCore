@@ -4392,10 +4392,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Futurify\\Github\\Vacation\\Futurify\\PhoneNumbers\\PhoneNumbers.csproj",
+      "projectUniqueName": "G:\\GitHubProject\\VacationScheduler\\Futurify\\PhoneNumbers\\PhoneNumbers.csproj",
       "projectName": "PhoneNumbers",
-      "projectPath": "G:\\Futurify\\Github\\Vacation\\Futurify\\PhoneNumbers\\PhoneNumbers.csproj",
-      "outputPath": "G:\\Futurify\\Github\\Vacation\\Futurify\\PhoneNumbers\\obj\\",
+      "projectPath": "G:\\GitHubProject\\VacationScheduler\\Futurify\\PhoneNumbers\\PhoneNumbers.csproj",
+      "outputPath": "G:\\GitHubProject\\VacationScheduler\\Futurify\\PhoneNumbers\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netstandard1.6"

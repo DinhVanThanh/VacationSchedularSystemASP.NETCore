@@ -9324,10 +9324,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Futurify\\Github\\Vacation\\Futurify\\Vacation.common\\Vacation.common.csproj",
+      "projectUniqueName": "G:\\GitHubProject\\VacationScheduler\\Futurify\\Vacation.common\\Vacation.common.csproj",
       "projectName": "Vacation.common",
-      "projectPath": "G:\\Futurify\\Github\\Vacation\\Futurify\\Vacation.common\\Vacation.common.csproj",
-      "outputPath": "G:\\Futurify\\Github\\Vacation\\Futurify\\Vacation.common\\obj\\",
+      "projectPath": "G:\\GitHubProject\\VacationScheduler\\Futurify\\Vacation.common\\Vacation.common.csproj",
+      "outputPath": "G:\\GitHubProject\\VacationScheduler\\Futurify\\Vacation.common\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -9335,8 +9335,8 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "G:\\Futurify\\Github\\Vacation\\Futurify\\App.common.core\\App.common.core.csproj": {
-              "projectPath": "G:\\Futurify\\Github\\Vacation\\Futurify\\App.common.core\\App.common.core.csproj"
+            "G:\\GitHubProject\\VacationScheduler\\Futurify\\App.common.core\\App.common.core.csproj": {
+              "projectPath": "G:\\GitHubProject\\VacationScheduler\\Futurify\\App.common.core\\App.common.core.csproj"
             }
           }
         }

@@ -10735,10 +10735,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Futurify\\Github\\Vacation\\Futurify\\Security\\Security.csproj",
+      "projectUniqueName": "G:\\GitHubProject\\VacationScheduler\\Futurify\\Security\\Security.csproj",
       "projectName": "Security",
-      "projectPath": "G:\\Futurify\\Github\\Vacation\\Futurify\\Security\\Security.csproj",
-      "outputPath": "G:\\Futurify\\Github\\Vacation\\Futurify\\Security\\obj\\",
+      "projectPath": "G:\\GitHubProject\\VacationScheduler\\Futurify\\Security\\Security.csproj",
+      "outputPath": "G:\\GitHubProject\\VacationScheduler\\Futurify\\Security\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -10746,14 +10746,14 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "G:\\Futurify\\Github\\Vacation\\Futurify\\App.common.core\\App.common.core.csproj": {
-              "projectPath": "G:\\Futurify\\Github\\Vacation\\Futurify\\App.common.core\\App.common.core.csproj"
+            "G:\\GitHubProject\\VacationScheduler\\Futurify\\App.common.core\\App.common.core.csproj": {
+              "projectPath": "G:\\GitHubProject\\VacationScheduler\\Futurify\\App.common.core\\App.common.core.csproj"
             },
-            "G:\\Futurify\\Github\\Vacation\\Futurify\\Vacation.common\\Vacation.common.csproj": {
-              "projectPath": "G:\\Futurify\\Github\\Vacation\\Futurify\\Vacation.common\\Vacation.common.csproj"
+            "G:\\GitHubProject\\VacationScheduler\\Futurify\\Vacation.common\\Vacation.common.csproj": {
+              "projectPath": "G:\\GitHubProject\\VacationScheduler\\Futurify\\Vacation.common\\Vacation.common.csproj"
             },
-            "G:\\Futurify\\Github\\Vacation\\Futurify\\PhoneNumbers\\PhoneNumbers.csproj": {
-              "projectPath": "G:\\Futurify\\Github\\Vacation\\Futurify\\PhoneNumbers\\PhoneNumbers.csproj"
+            "G:\\GitHubProject\\VacationScheduler\\Futurify\\PhoneNumbers\\PhoneNumbers.csproj": {
+              "projectPath": "G:\\GitHubProject\\VacationScheduler\\Futurify\\PhoneNumbers\\PhoneNumbers.csproj"
             }
           }
         }

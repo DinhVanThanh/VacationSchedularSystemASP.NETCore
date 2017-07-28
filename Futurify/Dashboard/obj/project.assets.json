@@ -8703,10 +8703,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Futurify\\Github\\Vacation\\Futurify\\Dashboard\\Dashboard.csproj",
+      "projectUniqueName": "G:\\GitHubProject\\VacationScheduler\\Futurify\\Dashboard\\Dashboard.csproj",
       "projectName": "Dashboard",
-      "projectPath": "G:\\Futurify\\Github\\Vacation\\Futurify\\Dashboard\\Dashboard.csproj",
-      "outputPath": "G:\\Futurify\\Github\\Vacation\\Futurify\\Dashboard\\obj\\",
+      "projectPath": "G:\\GitHubProject\\VacationScheduler\\Futurify\\Dashboard\\Dashboard.csproj",
+      "outputPath": "G:\\GitHubProject\\VacationScheduler\\Futurify\\Dashboard\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
