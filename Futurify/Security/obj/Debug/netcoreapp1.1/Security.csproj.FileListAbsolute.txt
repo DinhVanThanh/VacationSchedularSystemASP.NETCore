@@ -39,7 +39,7 @@ G:\GitHubProject\VacationScheduler\Futurify\Security\bin\Debug\netcoreapp1.1\Vac
 G:\GitHubProject\VacationScheduler\Futurify\Security\bin\Debug\netcoreapp1.1\App.common.core.pdb
 G:\GitHubProject\VacationScheduler\Futurify\Security\bin\Debug\netcoreapp1.1\Vacation.common.pdb
 G:\GitHubProject\VacationScheduler\Futurify\Security\bin\Debug\netcoreapp1.1\PhoneNumbers.pdb
+G:\GitHubProject\VacationScheduler\Futurify\Security\obj\Debug\netcoreapp1.1\Security.csprojResolveAssemblyReference.cache
 G:\GitHubProject\VacationScheduler\Futurify\Security\obj\Debug\netcoreapp1.1\Security.AssemblyInfo.cs
 G:\GitHubProject\VacationScheduler\Futurify\Security\obj\Debug\netcoreapp1.1\Security.dll
 G:\GitHubProject\VacationScheduler\Futurify\Security\obj\Debug\netcoreapp1.1\Security.pdb
-G:\GitHubProject\VacationScheduler\Futurify\Security\obj\Debug\netcoreapp1.1\Security.csprojResolveAssemblyReference.cache

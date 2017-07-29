@@ -18,6 +18,8 @@ using Vacation.common.Events;
 using RawRabbit.vNext;
 using RawRabbit;
 using App.common.core;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Http;
 
 namespace Notification
 {
@@ -48,6 +50,8 @@ namespace Notification
             services.AddSingleton<IDataStaticService, DataStaticService>();
             services.AddScoped<IMailService, MailService>();
             services.Configure<MicroserviceSetting>(Configuration.GetSection("Microservices"));
+            services.AddTransient<ClaimsPrincipal>(
+                s => s.GetService<IHttpContextAccessor>().HttpContext.User);
             // Add framework services.
             services.AddMvc();
         }

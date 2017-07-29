@@ -1,4 +1,4 @@
-(function ()
+﻿(function ()
 {
     'use strict';
 
@@ -7,8 +7,9 @@
         .config(config);
 
     /** @ngInject */
-    function config($translatePartialLoaderProvider)
-    {
+    function config( $translatePartialLoaderProvider)
+    { 
+
         $translatePartialLoaderProvider.addPart('app/toolbar');
     }
 })();

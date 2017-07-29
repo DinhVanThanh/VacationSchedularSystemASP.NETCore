@@ -18,11 +18,17 @@ using Security.Services;
 using Security.Setup;
 using RawRabbit.vNext;
 using Security.Options;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Http;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace Security
 {
     public class Startup
     {
+        private string jwtSecretToken, jwtAudience, jwtIssuer;
+        private int jwtExpiresInDays;
         private string _contentRootPath;
         public Startup(IHostingEnvironment env)
         {
@@ -33,6 +39,14 @@ namespace Security
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
 
+            var jwtConfigs = Configuration.GetSection("JWTSettings");
+
+            jwtSecretToken = jwtConfigs["SecretKey"];
+            jwtAudience = jwtConfigs["Audience"];
+            jwtIssuer = jwtConfigs["Issuer"];
+            jwtExpiresInDays = int.Parse(jwtConfigs["ExpiresInDays"]);
+
+
             _contentRootPath = env.ContentRootPath;
         }
 
@@ -41,8 +55,17 @@ namespace Security
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<JWTSettings>(options =>
+            {
+                // secretKey contains a secret passphrase only your server knows
+                var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(this.jwtSecretToken));
+                options.Audience = jwtAudience;
+                options.Issuer = jwtIssuer;
+                options.Expiration = TimeSpan.FromDays(jwtExpiresInDays);
+                options.SigningCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
+            });
             services.AddDbContext<AuthContext>(options => options.UseSqlServer(Configuration.GetSection("ConnectionStrings").GetSection("AuthDatabase").Value));
-            services.Configure<JWTSettings>(Configuration.GetSection("JWTSettings"));
+            //services.Configure<JWTSettings>(Configuration.GetSection("JWTSettings"));
             services.Configure<ResetPasswordOptions>(Configuration.GetSection("ResetPasswordSettings"));
             services.AddRawRabbit(cfg => cfg.SetBasePath(_contentRootPath).AddJsonFile("rabbitmq.json"));
             services.AddScoped<IAccountService, AccountService>();
@@ -51,6 +74,8 @@ namespace Security
             services.AddScoped<IVerificationService, VerificationService>();
             
             services.AddScoped<IResetPasswordService, ResetPasswordService>();
+            services.AddTransient<ClaimsPrincipal>(s => s.GetService<IHttpContextAccessor>().HttpContext.User);
+
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAllOrigins",
@@ -64,6 +89,7 @@ namespace Security
             
             // Add framework services.
             services.AddMvc();
+             
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -73,15 +99,16 @@ namespace Security
             loggerFactory.AddDebug();
 
             AuthContext.UpdateDatabase(app);
-
+            
             app.ConfigurePermissions();
 
             app.ConfigureSystemAdmin();
-
+            
             app.UseCors("AllowAllOrigins");
+            app.UseJwt(this.jwtSecretToken, this.jwtAudience, this.jwtIssuer);
             app.UseMiddleware<TokenProviderMiddleware>();
            
-            
+
             app.UseMvc();
         }
     }

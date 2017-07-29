@@ -42,5 +42,7 @@ namespace ProfileService.Model
         public Team Team { get; set; }
 
         public int? RemainingDay { get; set; }
+
+        public int? AccountId { get; set; }
     }
 }

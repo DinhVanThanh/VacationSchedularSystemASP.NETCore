@@ -52,6 +52,8 @@
 
             'app.profile.position',
 
-            'app.auth'
+            'app.auth',
+
+            'app.myProfile'
         ]);
 })();

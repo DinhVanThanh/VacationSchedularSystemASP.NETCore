@@ -12,6 +12,8 @@ using ProfileService.IServiceInterfaces;
 using ProfileService.Model;
 using ProfileService.Model.BindingModel;
 using ProfileService.Model.ViewModel;
+using App.common.core.Authentication;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ProfileService.Controllers
 {
@@ -33,6 +35,15 @@ namespace ProfileService.Controllers
             _employeeService = employeeService;
             AVATAR_FOLDER_FULL_PATH = Path.Combine(env.WebRootPath, AVATAR_FOLDER);
            
+        }
+        [Authorize]
+        [HttpGet]
+        [Route("me")]
+        public EmployeeViewModel MyProfile()
+        {
+            int? id = User.GetAccountId();
+            Employee existingEmployee = _employeeService.Get(id.HasValue ? id.Value : -1);
+            return EmployeeAdapter.ToViewModel(existingEmployee);
         }
         // GET: api/Employee
         [HttpGet]

@@ -19,7 +19,9 @@
             getAllPositions: getAllPositions,
             getAllEmployees: getAllEmployees
         };
+
          
+
         //positions
         function getAllPositions() {
             var deferer = $q.defer();

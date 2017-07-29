@@ -31,15 +31,5 @@ D:\GitHub\Vacation\Futurify\Notification\obj\Debug\netcoreapp1.1\Notification.pd
 G:\GitHubProject\VacationScheduler\Futurify\Notification\bin\Debug\netcoreapp1.1\Notification.deps.json
 G:\GitHubProject\VacationScheduler\Futurify\Notification\bin\Debug\netcoreapp1.1\Notification.runtimeconfig.json
 G:\GitHubProject\VacationScheduler\Futurify\Notification\bin\Debug\netcoreapp1.1\Notification.runtimeconfig.dev.json
-G:\GitHubProject\VacationScheduler\Futurify\Notification\bin\Debug\netcoreapp1.1\Notification.dll
-G:\GitHubProject\VacationScheduler\Futurify\Notification\bin\Debug\netcoreapp1.1\Notification.pdb
-G:\GitHubProject\VacationScheduler\Futurify\Notification\bin\Debug\netcoreapp1.1\App.common.core.dll
-G:\GitHubProject\VacationScheduler\Futurify\Notification\bin\Debug\netcoreapp1.1\PhoneNumbers.dll
-G:\GitHubProject\VacationScheduler\Futurify\Notification\bin\Debug\netcoreapp1.1\Vacation.common.dll
-G:\GitHubProject\VacationScheduler\Futurify\Notification\bin\Debug\netcoreapp1.1\App.common.core.pdb
-G:\GitHubProject\VacationScheduler\Futurify\Notification\bin\Debug\netcoreapp1.1\Vacation.common.pdb
-G:\GitHubProject\VacationScheduler\Futurify\Notification\bin\Debug\netcoreapp1.1\PhoneNumbers.pdb
 G:\GitHubProject\VacationScheduler\Futurify\Notification\obj\Debug\netcoreapp1.1\Notification.csprojResolveAssemblyReference.cache
 G:\GitHubProject\VacationScheduler\Futurify\Notification\obj\Debug\netcoreapp1.1\Notification.AssemblyInfo.cs
-G:\GitHubProject\VacationScheduler\Futurify\Notification\obj\Debug\netcoreapp1.1\Notification.dll
-G:\GitHubProject\VacationScheduler\Futurify\Notification\obj\Debug\netcoreapp1.1\Notification.pdb

@@ -11,6 +11,10 @@
     {
         var vm = this;
 
+        //profile
+
+       
+
         // Data
         $rootScope.global = {
             search: ''

@@ -17,11 +17,16 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Cors.Internal;
 using ProfileService.EventHandlers;
 using Vacation.common.Events;
+using App.common.core.Authentication;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace ProfileService
 {
     public class Startup
     {
+        private string jwtSecretToken, jwtAudience, jwtIssuer;
+        private int jwtExpiresInDays;
         private string _contentRootPath;
         public Startup(IHostingEnvironment env)
         {
@@ -32,6 +37,13 @@ namespace ProfileService
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
 
+            var jwtConfigs = Configuration.GetSection("JWTSettings");
+
+            jwtSecretToken = jwtConfigs["SecretKey"];
+            jwtAudience = jwtConfigs["Audience"];
+            jwtIssuer = jwtConfigs["Issuer"];
+            jwtExpiresInDays = int.Parse(jwtConfigs["ExpiresInDays"]);
+
             _contentRootPath = env.ContentRootPath;
         }
 
@@ -40,6 +52,15 @@ namespace ProfileService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<JWTSettings>(options =>
+            {
+                // secretKey contains a secret passphrase only your server knows
+                var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(this.jwtSecretToken));
+                options.Audience = jwtAudience;
+                options.Issuer = jwtIssuer;
+                options.Expiration = TimeSpan.FromDays(jwtExpiresInDays);
+                options.SigningCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
+            });
             // Add framework services.
             services.AddDbContext<ProfileContext>(options => options.UseSqlServer(Configuration.GetSection("ConnectionStrings").GetSection("VacationDatabase").Value));
             services.AddRawRabbit(cfg => cfg.SetBasePath(_contentRootPath).AddJsonFile("rabbitmq.json"));
@@ -70,6 +91,7 @@ namespace ProfileService
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
             ProfileContext.UpdateDatabase(app);
+            app.UseJwt(this.jwtSecretToken, this.jwtAudience, this.jwtIssuer);
             app.UseMvc();
 
             var _rawRabbitClient = app.ApplicationServices.GetService<IBusClient>();

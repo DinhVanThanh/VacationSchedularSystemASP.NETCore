@@ -14,6 +14,8 @@ using RawRabbit;
 using RawRabbit.Context;
 using Vacation.common;
 using Vacation.common.Events;
+using App.common.core.Exceptions;
+using System.Security.Claims;
 
 namespace Notification.EventHandlers
 {
@@ -22,11 +24,12 @@ namespace Notification.EventHandlers
         private IHostingEnvironment _env;
         private IBusClient _busClient;
         private ConfigSendEmail _configSendMail;
-        
+        private MessageService _messageService;
         private DbContextOptions<Models.MessageContext> _context;
-
-        public AccountCreatedHandlers(IBusClient busClient, IHostingEnvironment env, IOptions<ConfigSendEmail> configSendMail, DbContextOptions<Models.MessageContext> context)
+        private readonly ClaimsPrincipal _caller;
+        public AccountCreatedHandlers(ClaimsPrincipal caller,IBusClient busClient, IHostingEnvironment env, IOptions<ConfigSendEmail> configSendMail, DbContextOptions<Models.MessageContext> context)
         {
+            _caller = caller;
             _busClient = busClient;
             _env = env;
             _configSendMail = configSendMail.Value; 
@@ -36,7 +39,7 @@ namespace Notification.EventHandlers
         {
             //initiator new config for sending email
             ConfigSendEmail config = new ConfigSendEmail(_configSendMail);
-
+            var User = _caller.Claims.Select(c => new { c.Type, c.Value });
             try
             {
                 IMailService emailService = new MailService();
@@ -47,10 +50,19 @@ namespace Notification.EventHandlers
                     config.Receivers = new List<string>() { e.Email };//send an email
                     await emailService.SendMail(config, mailTemplate, e);
                 }
+                Message message = new Message();
+                message.ReceiverId = e.Id;
+                message.Content = mailTemplate.Body;
+                message.Subject = mailTemplate.Subject;
+                message.Type = Vacation.common.Enums.MessageType.AccountCreated;
+                message.CreateAt = DateTime.Now;
+                _messageService.Create(message);
+                
+                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw new CustomException(ex.Message, ex.InnerException.Message);
             }
         }
     }

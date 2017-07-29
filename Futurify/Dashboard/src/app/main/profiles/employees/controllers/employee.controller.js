@@ -388,7 +388,7 @@
         //toast register information failed
         $scope.showFailedLoadEmployeeToast = function () {
             $mdToast.show({
-                hideDelay: 5000,
+                hideDelay: 3000,
                 position: 'top right',
                 controller: 'ToastCtrl',
                 templateUrl: 'app/main/toast-templates/load-data-error.html'

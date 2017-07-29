@@ -18,6 +18,7 @@ using System.Security.Claims;
 using RawRabbit;
 using Vacation.common.Events;
 using Vacation.common;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Security.Controllers
 {
@@ -26,9 +27,12 @@ namespace Security.Controllers
     {
         private IResetPasswordService _resetpasswordService;
         private IBusClient _rawRabbitBus;
-        private IAccountService _accountService; 
-        public AccountController(IAccountService accountService, IBusClient rawRabbitBus, IResetPasswordService resetpasswordService)
+        private IAccountService _accountService;
+        private readonly ClaimsPrincipal _caller;
+
+        public AccountController(ClaimsPrincipal caller,IAccountService accountService, IBusClient rawRabbitBus, IResetPasswordService resetpasswordService)
         {
+            _caller = caller;
             _resetpasswordService = resetpasswordService;
             _rawRabbitBus = rawRabbitBus;
             _accountService = accountService;
@@ -103,16 +107,18 @@ namespace Security.Controllers
                await _resetpasswordService.SendResetPasswordCodeAndUrl(Email);
             }
         }
-
+       
         // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        [HttpGet("authorize")]
+        public IActionResult Put()
         {
+            var userClaims = User.Claims.Select(c => new { c.Type, c.Value });
+            return new JsonResult(userClaims);
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpGet("get")]
+        public void Delete()
         {
         }
          

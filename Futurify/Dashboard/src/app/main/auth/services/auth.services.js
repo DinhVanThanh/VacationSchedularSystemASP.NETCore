@@ -25,6 +25,7 @@
 
         var baseUrl = SVCS.Auth;
         var accountUrl = baseUrl + "/api/account";
+        var profileUrl = SVCS.Profile + "/api/Employee";
 
         var loadCurrentPromises = [];
         var loadCurrentProfilePromises = [];
@@ -100,9 +101,10 @@
                     return str.join("&");
                 }
             }).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 _authenticate(response.data, remember);
                 _syncPermissions(service.Account.Id).then(function () {
+                    console.log(service.Profile);
                     deferer.resolve();
                 })
 
@@ -262,20 +264,20 @@
         function _syncPermissions(accountId) {
             if (service.IsAuthenticated) {
                 return $http.get(baseUrl + '/api/account/me/permissions/' + accountId, { hideAjaxLoader: true }).then(function (permissions) {
-                    console.log(permissions);
+                    //console.log(permissions);
                     service.Permissions = permissions.data;
                     $rootScope.$emit('PERMISSIONS_LOADED');
 
-                    if (service.Permissions.indexOf('RECRUITER') != -1) {
-                        $http.get(SVCS.Profile + '/api/recruiters/me').then(function (profile) {
-                            service.Profile = profile.data;
-                            var deferer = loadCurrentProfilePromises.pop();
-                            while (deferer) {
-                                deferer.resolve(service.Profile);
-                                deferer = loadCurrentProfilePromises.pop();
-                            }
-                        })
-                    }
+
+                    $http.get(profileUrl + '/me').then(function (profile) {
+                        service.Profile = profile.data;
+                        var deferer = loadCurrentProfilePromises.pop();
+                        while (deferer) {
+                            deferer.resolve(service.Profile);
+                            deferer = loadCurrentProfilePromises.pop();
+                        }
+                    })
+                    
                 })
             } else {
                 var deferer = $q.defer();

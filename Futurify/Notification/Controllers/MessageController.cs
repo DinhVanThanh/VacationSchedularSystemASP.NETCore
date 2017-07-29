@@ -14,6 +14,7 @@ using RawRabbit.Context;
 using Vacation.common;
 using Vacation.common.Events;
 using Vacation.common.Models;
+using System.Security.Claims;
 
 namespace Notification.Controllers
 {
@@ -24,12 +25,14 @@ namespace Notification.Controllers
         private IBusClient _rawRabbitBus;
         private ConfigSendEmail _configSendEmail;
         private IHostingEnvironment _env;
-        public MessageController(IHostingEnvironment env, IBusClient rawRabbitBus, IMailService mailService, IOptions<ConfigSendEmail> configSendEmail)
+        private readonly ClaimsPrincipal _caller;
+        public MessageController(ClaimsPrincipal caller, IHostingEnvironment env, IBusClient rawRabbitBus, IMailService mailService, IOptions<ConfigSendEmail> configSendEmail)
         {
             _configSendEmail = configSendEmail.Value;
             _mailService = mailService;
             _rawRabbitBus = rawRabbitBus;
             _env = env;
+            _caller = caller;
         }
         // GET api/message/send
         [HttpPost]
@@ -58,10 +61,10 @@ namespace Notification.Controllers
         }
 
         // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("currentUser")]
+        public JsonResult Get()
         {
-            return "value";
+            return Json(_caller.Claims.Select( c => new { c.Type, c.Value }));
         }
 
         // POST api/values
