@@ -25,11 +25,10 @@ namespace Notification.EventHandlers
         private IBusClient _busClient;
         private ConfigSendEmail _configSendMail;
         private MessageService _messageService;
-        private DbContextOptions<Models.MessageContext> _context;
-        private readonly ClaimsPrincipal _caller;
-        public AccountCreatedHandlers(ClaimsPrincipal caller,IBusClient busClient, IHostingEnvironment env, IOptions<ConfigSendEmail> configSendMail, DbContextOptions<Models.MessageContext> context)
+        private DbContextOptions<Models.MessageContext> _context; 
+        public AccountCreatedHandlers(IBusClient busClient, IHostingEnvironment env, IOptions<ConfigSendEmail> configSendMail, DbContextOptions<Models.MessageContext> context)
         {
-            _caller = caller;
+            
             _busClient = busClient;
             _env = env;
             _configSendMail = configSendMail.Value; 
@@ -39,7 +38,7 @@ namespace Notification.EventHandlers
         {
             //initiator new config for sending email
             ConfigSendEmail config = new ConfigSendEmail(_configSendMail);
-            var User = _caller.Claims.Select(c => new { c.Type, c.Value });
+           
             try
             {
                 IMailService emailService = new MailService();

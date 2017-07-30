@@ -16,24 +16,12 @@ namespace ProfileService.Migrations
                 .HasAnnotation("ProductVersion", "1.1.2")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ProfileService.Model.Apartment", b =>
-                {
-                    b.Property<int>("ApartmentId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("ApartmentName");
-
-                    b.HasKey("ApartmentId");
-
-                    b.ToTable("Apartments");
-                });
-
             modelBuilder.Entity("ProfileService.Model.Employee", b =>
                 {
                     b.Property<int>("EmployeeId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("ApartmentId");
+                    b.Property<int?>("AccountId");
 
                     b.Property<string>("Avatar");
 
@@ -56,8 +44,6 @@ namespace ProfileService.Migrations
                     b.Property<int?>("TeamId");
 
                     b.HasKey("EmployeeId");
-
-                    b.HasIndex("ApartmentId");
 
                     b.HasIndex("PositionId");
 
@@ -96,10 +82,6 @@ namespace ProfileService.Migrations
 
             modelBuilder.Entity("ProfileService.Model.Employee", b =>
                 {
-                    b.HasOne("ProfileService.Model.Apartment", "Apartment")
-                        .WithMany()
-                        .HasForeignKey("ApartmentId");
-
                     b.HasOne("ProfileService.Model.Position", "Position")
                         .WithMany()
                         .HasForeignKey("PositionId");
