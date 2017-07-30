@@ -1,8 +1,0 @@
-D:\GitHub\Vacation\Futurify\Dashboard\bin\Release\netcoreapp1.1\Dashboard.deps.json
-D:\GitHub\Vacation\Futurify\Dashboard\bin\Release\netcoreapp1.1\Dashboard.runtimeconfig.json
-D:\GitHub\Vacation\Futurify\Dashboard\bin\Release\netcoreapp1.1\Dashboard.runtimeconfig.dev.json
-D:\GitHub\Vacation\Futurify\Dashboard\bin\Release\netcoreapp1.1\Dashboard.dll
-D:\GitHub\Vacation\Futurify\Dashboard\bin\Release\netcoreapp1.1\Dashboard.pdb
-D:\GitHub\Vacation\Futurify\Dashboard\obj\Release\netcoreapp1.1\Dashboard.AssemblyInfo.cs
-D:\GitHub\Vacation\Futurify\Dashboard\obj\Release\netcoreapp1.1\Dashboard.dll
-D:\GitHub\Vacation\Futurify\Dashboard\obj\Release\netcoreapp1.1\Dashboard.pdb
